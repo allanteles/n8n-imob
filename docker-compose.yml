@@ -1,0 +1,16 @@
+services:
+  n8n-imob:
+    image: n8nio/n8n
+    ports:
+      - "5678:5678"
+    volumes:
+      - ./src:/home/node/.n8n
+    environment:
+      GENERIC_TIMEZONE: America/Sao_Paulo
+    restart: unless-stopped
+    networks:
+      - n8n-network-imob
+ 
+networks:
+  n8n-network-imob:
+    driver: bridge
