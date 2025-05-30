@@ -1,0 +1,19 @@
+# Dockerfile-pocketbase
+FROM alpine:latest
+
+# Instala dependências
+RUN apk add --no-cache wget unzip
+
+# Cria diretório de trabalho
+WORKDIR /pocketbase
+
+# Baixa e descompacta o PocketBase
+RUN wget https://github.com/pocketbase/pocketbase/releases/download/v0.28.2/pocketbase_0.28.2_linux_amd64.zip && \
+    unzip pocketbase_0.28.2_linux_amd64.zip && \
+    rm pocketbase_0.28.2_linux_amd64.zip
+
+# Expõe a porta padrão do PocketBase (8090)
+EXPOSE 8090
+
+# Comando para iniciar o servidor
+CMD ["./pocketbase", "serve", "--http=0.0.0.0:8090"]
