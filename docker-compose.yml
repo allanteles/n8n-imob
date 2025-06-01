@@ -31,7 +31,7 @@ services:
 
 volumes:
   n8n_data:
-   pocketbase_data:
+  pocketbase_data:
 
 
   
