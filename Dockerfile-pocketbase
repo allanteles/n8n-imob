@@ -16,4 +16,4 @@ RUN wget https://github.com/pocketbase/pocketbase/releases/download/v0.28.2/pock
 EXPOSE 8090
 
 # Comando para iniciar o servidor
-CMD ["./pocketbase", "serve", "--http=0.0.0.0:8090"]
+CMD ["./pocketbase", "serve", "137.184.106.243"]
